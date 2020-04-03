@@ -1,0 +1,12 @@
+uri: https://www.peak-system.com/fileadmin/media/linux/files/peak-linux-driver-8.10.0.tar.gz
+md5sum: 537715c450a6247f784a964b0fcf4432
+depends: [libpopt-dev]
+exec-path: peak-linux-driver-8.10.0
+install-script: |
+    #!/bin/bash
+    make clean
+    make all
+    sudo make install
+check-presence-script: |
+    #!/bin/bash
+    modprobe -n pcan
